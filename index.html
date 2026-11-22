@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090910">
+<title>SENYXAR | Social</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #090910;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #a78bfa;
+}
+
+.tag {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.hero h1 {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.hero h1 span {
+  color: #a78bfa;
+}
+
+.hero p {
+  color: #9292a5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form {
+  background: #141420;
+  border: 1px solid #29293b;
+  padding: 25px 20px;
+  border-radius: 20px;
+}
+
+.form h2 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 9px;
+  color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  background: #0b0b14;
+  border: 1px solid #303044;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  margin-bottom: 19px;
+}
+
+input:focus {
+  border-color: #a78bfa;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#7653db,#b078fa);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 22px;
+  color: #999;
+  font-size: 13px;
+}
+
+.switch a {
+  color: #b69aff;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #555;
+  font-size: 11px;
+  margin-top: auto;
+  padding-top: 45px;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <div class="logo">SENYXAR.</div>
+  <div class="tag">SOCIAL NETWORK</div>
+</header>
+
+<section class="hero">
+  <h1>Welcome to <span>Senyxar</span></h1>
+  <p>Connect with people.<br>
+  Share your world. Discover something new.</p>
+</section>
+
+<div class="form" id="login">
+  <h2>Welcome Back!</h2>
+  <p class="subtitle">Login to your Senyxar account</p>
+
+  <form onsubmit="loginDemo(event)">
+    <label>Email Address</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <label>Password</label>
+    <input type="password" placeholder="Enter password" required>
+
+    <button class="main-btn" type="submit">
+      LOGIN
+    </button>
+  </form>
+
+  <div class="switch">
+    Don't have an account?
+    <a onclick="showSignup()">Sign Up</a>
+  </div>
+</div>
+
+<div class="form hidden" id="signup">
+  <h2>Create Account</h2>
+  <p class="subtitle">Join the Senyxar community</p>
+
+  <form onsubmit="signupDemo(event)">
+    <label>Full Name</label>
+    <input type="text" placeholder="Your name" required>
+
+    <label>Email Address</label>
+    <input type="email" placeholder="Your email" required>
+
+    <label>Password</label>
+    <input type="password" minlength="6"
+    placeholder="Create password" required>
+
+    <button class="main-btn" type="submit">
+      CREATE ACCOUNT
+    </button>
+  </form>
+
+  <div class="switch">
+    Already have an account?
+    <a onclick="showLogin()">Login</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 SENYXAR. All Rights Reserved.
+</footer>
+
+</div>
+
+<script>
+function showSignup() {
+  document.getElementById("login").classList.add("hidden");
+  document.getElementById("signup").classList.remove("hidden");
+}
+
+function showLogin() {
+  document.getElementById("signup").classList.add("hidden");
+  document.getElementById("login").classList.remove("hidden");
+}
+
+function loginDemo(event) {
+  event.preventDefault();
+  alert("Login design is working! Real authentication will be added next.");
+}
+
+function signupDemo(event) {
+  event.preventDefault();
+  alert("Signup design is working! Account creation will be connected next.");
+}
+</script>
+
+</body>
+</html>
